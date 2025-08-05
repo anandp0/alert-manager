@@ -4,14 +4,14 @@ app:
     notify: appz@ecloudcontrol.com
 
 build:
-    version: 0.2
+    version: 0.28
     env: DEV
     build_file: none
     output_files: output/*.zip
-    image_template: alertmanager-0.20
+    image_template: alertmanager-0.28
 
 deploy:
-    context: alpha/DEV
+    context: anandp0/DEV
     type: statefulset
     replicas: 1
     port:
@@ -27,5 +27,5 @@ properties:
     SLACK_API_URL:
       vault: SLACK_API_URL
     SLACK_CHANNEL: notification-openebs
-    CLUSTER_NAME: AWS_QA
-    revision : 19
+    CLUSTER_NAME: QA_CLUSTER_CHECK
+    revision : 1
